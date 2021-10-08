@@ -348,6 +348,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/Resource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/ResponseHelper.kt">
           <value>
             <set />
