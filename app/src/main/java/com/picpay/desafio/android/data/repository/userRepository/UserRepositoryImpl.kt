@@ -28,7 +28,7 @@ class UserRepositoryImpl(
 
             emit(Resource.loading())
 
-            if (response.isSuccessful) {
+            if (responseGit commnit.isSuccessful) {
                 emit(Resource.success(userRemoteDataSource.fetchUserList().body()))
 
                 userLocalDataSource.saveUserList(
