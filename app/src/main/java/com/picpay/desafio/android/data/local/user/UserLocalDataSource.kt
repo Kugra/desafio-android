@@ -8,6 +8,6 @@ interface UserLocalDataSource {
 
     suspend fun saveUserList(userList: List<UserEntity>)
 
-    val userFlow: Flow<List<UserEntity>>
+    suspend fun getUsersList(): List<UserEntity>
 
 }

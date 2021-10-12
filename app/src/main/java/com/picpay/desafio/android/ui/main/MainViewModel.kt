@@ -1,10 +1,13 @@
 package com.picpay.desafio.android.ui.main
 
-import android.widget.Toast
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.picpay.desafio.android.data.model.User
 import com.picpay.desafio.android.data.repository.userRepository.UserRepository
-import com.picpay.desafio.android.utils.helper.Resource
+import com.picpay.desafio.android.utils.helper.FailureType
+import com.picpay.desafio.android.utils.helper.FailureType.*
 import com.picpay.desafio.android.utils.helper.Status
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -12,35 +15,45 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val userRepository: UserRepository): ViewModel() {
 
-    val userLiveData = userRepository.userFlow.asLiveData(Dispatchers.IO)
-
-    private val _livedata: MutableLiveData<List<User>> = MutableLiveData()
-    val liveData: LiveData<List<User>>
-        get() = _livedata
+    private val _usersList: MutableLiveData<List<User>> = MutableLiveData()
+    val usersList: LiveData<List<User>>
+        get() = _usersList
 
     private val _loading = MutableLiveData(false)
     val loading: LiveData<Boolean>
         get() = _loading
+
+    private val _loadingError = MutableLiveData(NONE)
+    val loadingError: LiveData<FailureType>
+        get() = _loadingError
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
 
             userRepository.fetchUserList().collect { resource ->
                 when(resource.status) {
-                    Status.LOADING -> _loading.postValue(true)
+                    Status.LOADING -> {
+                        _loading.postValue(true)
+                        _loadingError.postValue(NONE)
+                    }
 
                     Status.SUCCESS -> {
                         _loading.postValue(false)
-                        if (resource.data != null) {
-                            _livedata.postValue(resource.data)
-                        }
+                        _loadingError.postValue(NONE)
+                        _usersList.postValue(resource.data)
                     }
 
                     Status.FAILURE -> {
                         _loading.postValue(false)
+                        _loadingError.postValue(NO_DATA)
+                    }
+
+                    Status.FAILED_GRACEFULLY -> {
+                        _loading.postValue(false)
+                        _loadingError.postValue(GRACEFULLY)
+                        _usersList.postValue(resource.data)
                     }
                 }
-
             }
         }
     }

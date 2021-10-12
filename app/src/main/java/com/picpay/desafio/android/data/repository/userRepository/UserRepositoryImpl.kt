@@ -5,6 +5,7 @@ import com.picpay.desafio.android.data.mapper.user.UserEntityMapper
 import com.picpay.desafio.android.data.mapper.user.UserMapper
 import com.picpay.desafio.android.data.model.User
 import com.picpay.desafio.android.data.remote.user.UserRemoteDataSource
+import com.picpay.desafio.android.utils.extensions.isTrue
 import com.picpay.desafio.android.utils.helper.Resource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -18,8 +19,6 @@ class UserRepositoryImpl(
     private val userRemoteDataSource: UserRemoteDataSource
 ) : UserRepository {
 
-    override val userFlow = userLocalDataSource.userFlow.map { UserMapper.transformList(it) }
-
     override suspend fun fetchUserList(): Flow<Resource<List<User>>> {
 
         val response = userRemoteDataSource.fetchUserList()
@@ -28,28 +27,29 @@ class UserRepositoryImpl(
 
             emit(Resource.loading())
 
-            if (responseGit commnit.isSuccessful) {
-                emit(Resource.success(userRemoteDataSource.fetchUserList().body()))
+            if (response?.isSuccessful.isTrue()) {
+                emit(Resource.success(userRemoteDataSource.fetchUserList()?.body()))
 
                 userLocalDataSource.saveUserList(
                     UserEntityMapper.transformList(
-                        userRemoteDataSource.fetchUserList().body() ?: emptyList()
+                        userRemoteDataSource.fetchUserList()?.body() ?: emptyList()
                     )
                 )
 
             } else {
-                emit(Resource.failure(response.message()))
-            }
 
+                val userList = userLocalDataSource.getUsersList()
+
+                if (userList.isNotEmpty()) {
+                    emit(Resource.failGracefully(userList.map { UserMapper.transform(it) }))
+                } else {
+                    emit(Resource.failure(response?.message()))
+                }
+
+            }
 
         }.flowOn(Dispatchers.IO)
 
-
-//        UserEntityMapper.transformList()
-
-        /*userLocalDataSource.saveUserList(
-            UserEntityMapper.transformList(userRemoteDataSource.fetchUserList() ?: emptyList())
-        )*/
     }
 
 }

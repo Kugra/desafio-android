@@ -3,13 +3,10 @@ package com.picpay.desafio.android.ui.main
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import com.picpay.desafio.android.data.model.User
 import com.picpay.desafio.android.databinding.ActivityMainBinding
 import com.picpay.desafio.android.ui.userlist.UserListAdapter
-import com.picpay.desafio.android.utils.extensions.gone
-import com.picpay.desafio.android.utils.extensions.visible
-import com.picpay.desafio.android.utils.helper.Status
+import com.picpay.desafio.android.utils.helper.FailureType
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -25,30 +22,65 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.liveData.observe(this, {
-            userListObserver(it)
-        })
-
-        viewModel.loading.observe(this, { isLoading ->
-            if (isLoading) binding.showProgressBar() else binding.hideProgressBar()
-        })
+        startObservers()
 
         binding.apply {
             recyclerView.adapter = adapter
         }
     }
 
-    private fun userListObserver(userList: List<User>) {
+    private fun startObservers() {
+
+        fun usersListObserver() {
+            viewModel.usersList.observe(this) {
+                usersListObserver(it)
+            }
+        }
+
+        fun loadingObserver() {
+            viewModel.loading.observe(this) {
+                loadingObserver(it)
+            }
+        }
+
+        fun loadingErrorObserver() {
+            viewModel.loadingError.observe(this) {
+                loadingErrorObserver(it)
+            }
+        }
+
+        loadingErrorObserver()
+        usersListObserver()
+        loadingObserver()
+    }
+
+    private fun usersListObserver(userList: List<User>) {
         adapter.users = userList
     }
 
-}
+    private fun loadingObserver(isLoading: Boolean) {
+        if (isLoading) binding.showProgressBar() else binding.hideProgressBar()
+    }
 
+    private fun loadingErrorObserver(failureType: FailureType) {
+        when (failureType) {
+            FailureType.NO_DATA -> {
+                Toast.makeText(this,
+                    "An error occurred",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
 
-fun ActivityMainBinding.showProgressBar() {
-    userListProgressBar.visible()
-}
+            FailureType.GRACEFULLY -> {
+                Toast.makeText(
+                    this,
+                    "This is old data",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
 
-fun ActivityMainBinding.hideProgressBar() {
-    userListProgressBar.gone()
+            else -> { /*nothing*/ }
+        }
+    }
+
 }

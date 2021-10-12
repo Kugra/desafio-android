@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-30/android.jar!/android/os/Parcelable.class">
           <value>
             <set />
@@ -313,6 +318,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/ChatRoomActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/main/ActivityMainBindingFunctions.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/main/MainActivity.kt">
           <value>
             <set />
@@ -338,6 +353,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/extensions/Boolean.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/extensions/View.kt">
           <value>
             <set />
@@ -348,12 +368,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/FailureType.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/Resource.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/ResponseHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/Status.kt">
           <value>
             <set />
           </value>

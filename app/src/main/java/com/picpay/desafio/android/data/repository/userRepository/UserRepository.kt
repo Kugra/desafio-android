@@ -8,6 +8,4 @@ interface UserRepository {
 
     suspend fun fetchUserList(): Flow<Resource<List<User>>>
 
-    val userFlow: Flow<List<User>>
-
 }

@@ -1,11 +1,5 @@
 package com.picpay.desafio.android.utils.helper
 
-enum class Status {
-    LOADING,
-    SUCCESS,
-    FAILURE
-}
-
 data class Resource<out T>(
     val status: Status,
     val data: T? = null,
@@ -26,6 +20,9 @@ data class Resource<out T>(
             return Resource(Status.FAILURE, data, msg)
         }
 
+        fun <T: Any> failGracefully(data: T?): Resource<T> {
+            return Resource(Status.FAILED_GRACEFULLY, data)
+        }
 
     }
 

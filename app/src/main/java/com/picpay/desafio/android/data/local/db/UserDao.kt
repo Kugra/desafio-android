@@ -9,6 +9,6 @@ import kotlinx.coroutines.flow.Flow
 abstract class UserDao: BaseDao<UserEntity, Int>(USER_TABLE) {
 
     @Query("SELECT * FROM $USER_TABLE")
-    abstract fun flow(): Flow<List<UserEntity>>
+    abstract fun getUsersList(): List<UserEntity>
 
 }
