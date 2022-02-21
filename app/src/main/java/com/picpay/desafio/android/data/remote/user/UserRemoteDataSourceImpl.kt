@@ -8,9 +8,8 @@ class UserRemoteDataSourceImpl(
     private val service: PicPayService,
 ) : UserRemoteDataSource {
 
-    override suspend fun fetchUserList(): Response<List<User>>? {
+    override suspend fun fetchUserList(): Response<List<User>> {
         return service.getUsers()
-
     }
 
 }

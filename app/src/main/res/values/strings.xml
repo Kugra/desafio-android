@@ -3,4 +3,7 @@
     <string name="title">Contatos</string>
     <string name="error">Ocorreu um erro. Tente novamente.</string>
 
+    <string name="snackbar_action">Understood</string>
+    <string name="cached_data">This is cached data</string>
+    <string name="generic_error">An error occurred</string>
 </resources>

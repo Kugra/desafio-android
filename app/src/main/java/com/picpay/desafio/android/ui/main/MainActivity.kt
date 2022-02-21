@@ -2,7 +2,11 @@ package com.picpay.desafio.android.ui.main
 
 import android.os.Bundle
 import android.widget.Toast
+import androidx.annotation.IntegerRes
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
+import com.picpay.desafio.android.R
 import com.picpay.desafio.android.data.model.User
 import com.picpay.desafio.android.databinding.ActivityMainBinding
 import com.picpay.desafio.android.ui.userlist.UserListAdapter
@@ -65,22 +69,22 @@ class MainActivity : AppCompatActivity() {
     private fun loadingErrorObserver(failureType: FailureType) {
         when (failureType) {
             FailureType.NO_DATA -> {
-                Toast.makeText(this,
-                    "An error occurred",
-                    Toast.LENGTH_LONG
-                ).show()
+                showSnackbarWithMessage(getString(R.string.generic_error))
             }
 
             FailureType.GRACEFULLY -> {
-                Toast.makeText(
-                    this,
-                    "This is old data",
-                    Toast.LENGTH_LONG
-                ).show()
+                showSnackbarWithMessage(getString(R.string.cached_data))
             }
 
             else -> { /*nothing*/ }
         }
+    }
+
+    private fun showSnackbarWithMessage(message: String) {
+        Snackbar.make(binding.parentView,
+            message,
+            Snackbar.LENGTH_SHORT
+        ).show()
     }
 
 }

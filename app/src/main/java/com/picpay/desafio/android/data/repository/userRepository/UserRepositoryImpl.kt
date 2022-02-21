@@ -1,5 +1,6 @@
 package com.picpay.desafio.android.data.repository.userRepository
 
+import android.util.Log
 import com.picpay.desafio.android.data.local.user.UserLocalDataSource
 import com.picpay.desafio.android.data.mapper.user.UserEntityMapper
 import com.picpay.desafio.android.data.mapper.user.UserMapper
@@ -11,6 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import retrofit2.Response
 
 class UserRepositoryImpl(
     private val userLocalDataSource: UserLocalDataSource,
@@ -21,7 +23,11 @@ class UserRepositoryImpl(
 
         return flow {
 
-            val response = userRemoteDataSource.fetchUserList()
+            var response : Response<List<User>>? = null
+
+            runCatching {
+                response = userRemoteDataSource.fetchUserList()
+            }.getOrNull()
 
             emit(Resource.loading())
 
