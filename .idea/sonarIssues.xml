@@ -43,17 +43,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/app/network/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/app/src/main/java/johan/kovalsikoski/codefolio/presenter/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/app/src/main/res/layout/activity_main.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/network/src/main/java/johan/kovalsikoski/network/FailureType.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/network/src/main/java/johan/kovalsikoski/network/Resource.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../Codefolio/network/src/main/java/johan/kovalsikoski/network/Status.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../Pokemon/app/src/test/java/johan/kovalsikoski/pokemon/ExampleUnitTest.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <value>
             <set />
           </value>
@@ -64,11 +89,6 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/PicPayService.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ProjectApplication.kt">
           <value>
             <set />
           </value>
@@ -103,27 +123,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/db/BaseDao.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/db/Database.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/db/PremiereDatabase.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/db/ProjectDatabase.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/db/UserDao.kt">
           <value>
             <set />
           </value>
@@ -138,37 +138,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/user/UserLocalDataSource.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/local/user/UserLocalDataSourceImpl.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/mapper/BaseMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/mapper/UserMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/mapper/user/UserEntityMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/mapper/user/UserMapper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/model/User.kt">
           <value>
             <set />
           </value>
@@ -179,16 +149,6 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/remote/UserRemoteDataSourceImpl.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/remote/user/UserRemoteDataSource.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/remote/user/UserRemoteDataSourceImpl.kt">
           <value>
             <set />
           </value>
@@ -238,16 +198,6 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/repository/userRepository/UserRepository.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/repository/userRepository/UserRepositoryImpl.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/repository/wrapper/userRepository/UserRepository.kt">
           <value>
             <set />
@@ -273,17 +223,7 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/service/picpay/PicPayService.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/service/picpay/PicPayServiceImpl.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/data/service/picpay/ServiceProvider.kt">
           <value>
             <set />
           </value>
@@ -298,92 +238,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/di/DataSourceModules.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/di/NetworkModules.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/di/RepositoryModules.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/di/ViewModelModules.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/ChatRoomActivity.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/main/ActivityMainBindingFunctions.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/main/MainActivity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/main/MainViewModel.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/userlist/UserListAdapter.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/userlist/UserListDiffCallback.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/ui/userlist/UserListItemViewHolder.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/extensions/Boolean.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/extensions/View.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/ApiHelper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/FailureType.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/Resource.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/extensions/Any.kt">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/ResponseHelper.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/helper/Status.kt">
           <value>
             <set />
           </value>
@@ -409,21 +274,6 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/picpay/desafio/android/utils/tables/TableConstants.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/gradle.properties">
           <value>
             <set />
           </value>

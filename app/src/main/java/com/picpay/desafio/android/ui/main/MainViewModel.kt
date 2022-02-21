@@ -10,6 +10,7 @@ import com.picpay.desafio.android.utils.helper.FailureType
 import com.picpay.desafio.android.utils.helper.FailureType.*
 import com.picpay.desafio.android.utils.helper.Status
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -28,7 +29,11 @@ class MainViewModel(private val userRepository: UserRepository): ViewModel() {
         get() = _loadingError
 
     init {
-        viewModelScope.launch(Dispatchers.IO) {
+        fetchData()
+    }
+
+    private fun fetchData() {
+        viewModelScope.launch {
 
             userRepository.fetchUserList().collect { resource ->
                 when(resource.status) {
@@ -40,7 +45,7 @@ class MainViewModel(private val userRepository: UserRepository): ViewModel() {
                     Status.SUCCESS -> {
                         _loading.postValue(false)
                         _loadingError.postValue(NONE)
-                        _usersList.postValue(resource.data)
+                        resource.data.let { _usersList.postValue(it) }
                     }
 
                     Status.FAILURE -> {
@@ -51,7 +56,7 @@ class MainViewModel(private val userRepository: UserRepository): ViewModel() {
                     Status.FAILED_GRACEFULLY -> {
                         _loading.postValue(false)
                         _loadingError.postValue(GRACEFULLY)
-                        _usersList.postValue(resource.data)
+                        resource.data.let { _usersList.postValue(it) }
                     }
                 }
             }

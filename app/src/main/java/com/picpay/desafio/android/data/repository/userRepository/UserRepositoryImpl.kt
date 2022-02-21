@@ -11,8 +11,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kotlinx.coroutines.flow.map
-import kotlin.random.Random
 
 class UserRepositoryImpl(
     private val userLocalDataSource: UserLocalDataSource,
@@ -21,9 +19,9 @@ class UserRepositoryImpl(
 
     override suspend fun fetchUserList(): Flow<Resource<List<User>>> {
 
-        val response = userRemoteDataSource.fetchUserList()
-
         return flow {
+
+            val response = userRemoteDataSource.fetchUserList()
 
             emit(Resource.loading())
 
